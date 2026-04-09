@@ -1,0 +1,69 @@
+.application-form-section {
+  background: var(--panel);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.application-form-section h2 {
+  margin-bottom: 1rem;
+  color: var(--text-strong);
+}
+
+.application-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.application-form input,
+.application-form select,
+.application-form textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-alt);
+  color: var(--text);
+}
+
+.application-form input:focus,
+.application-form select:focus,
+.application-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.application-form button {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--primary-text);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.application-form button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.cancel-button {
+  background: var(--panel-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.application-form input::placeholder,
+.application-form textarea::placeholder {
+  color: var(--text-soft);
+}
+
+.application-form button:disabled {
+  background: var(--border);
+  color: var(--text-soft);
+  cursor: not-allowed;
+  opacity: 1;
+  transform: none;
+}

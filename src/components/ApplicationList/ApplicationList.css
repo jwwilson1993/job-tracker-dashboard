@@ -1,0 +1,19 @@
+.application-list-section h2 {
+  margin-bottom: 1rem;
+  color: var(--text-strong);
+}
+
+.application-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.empty-message {
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px dashed var(--border);
+  background: var(--panel);
+  color: var(--text-soft);
+  text-align: center;
+  line-height: 1.6;
+}

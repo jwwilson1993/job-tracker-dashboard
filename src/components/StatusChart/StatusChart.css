@@ -1,0 +1,33 @@
+.status-chart-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  min-width: 0;
+}
+
+.status-chart-section h2 {
+  margin-bottom: 1rem;
+  color: var(--text-strong);
+}
+
+.status-chart-wrapper {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+}
+
+.status-chart-section {
+  transition: box-shadow 0.2s ease;
+}
+
+.status-chart-section:hover {
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .status-chart-wrapper {
+    height: 240px;
+  }
+}

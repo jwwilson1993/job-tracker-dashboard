@@ -1,100 +1,39 @@
-# 🚀 HireFlow — Job Application Tracker
+# HireFlow — Job Application Tracker
 
-A modern, responsive dashboard for tracking job applications, interviews, and offers.
-Built with React, this app helps streamline your job search with a clean UI, real-time updates, and practical features.
+A responsive React dashboard for tracking job applications, interview stages, and job search progress.
 
----
+## Overview
 
-## 🌐 Live Demo
+HireFlow is a front-end project built to organize the job application process in one place. It focuses on clean UI, reusable React components, and practical dashboard features for tracking applications from saved jobs to offers.
 
-👉 [Add your deployed link here]
+## Built With
 
----
+- React
+- JavaScript
+- CSS
+- Vite
+- Recharts
 
-## 📸 Screenshots
+## Features
 
-### Desktop
+- Add and manage job applications
+- Track application status
+- View job search progress in a dashboard layout
+- Responsive design for desktop and mobile
+- Chart-based visual summaries with Recharts
 
-(Add screenshot here)
+## What I Practiced
 
-### Mobile
+- Managing application state in React
+- Building reusable dashboard components
+- Creating responsive layouts
+- Displaying data visually with charts
+- Designing a practical app around a real workflow
 
-(Add screenshot here)
+## Future Improvements
 
----
-
-## ✨ Features
-
-* 📋 Add, edit, and delete job applications
-* 🔍 Search and filter by company, role, or status
-* 📊 Dashboard stats with real-time updates
-* 📈 Interactive chart visualization (Recharts)
-* 💾 Persistent data using localStorage
-* 📤 Export applications to CSV
-* 🌙 Dark / Light mode toggle
-* 🔔 Toast notifications for user actions
-* ⚠️ Confirmation modals for destructive actions
-* 📱 Fully responsive design
-
----
-
-## 🛠 Tech Stack
-
-* **React** (Hooks, State Management)
-* **Vite** (Fast development environment)
-* **CSS (Custom + Variables)**
-* **Recharts** (Data visualization)
-* **LocalStorage API**
-
----
-
-## 🚧 Future Improvements
-
-* Drag-and-drop Kanban board for application status
-* Backend integration (Firebase or API)
-* User authentication
-* Activity feed (recent actions)
-* Export filtered results only
-* Improved accessibility (ARIA, keyboard navigation)
-
----
-
-## ⚙️ Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/jwwilson1993/hireflow.git
-
-# Navigate into the project
-cd hireflow
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
----
-
-## 📁 Project Structure
-
-```
-src/
-  components/
-  utils/
-  data/
-  App.jsx
-```
-
----
-
-## 💬 About
-
-This project was built as part of my front-end development journey, focusing on creating real-world, production-style applications rather than simple tutorials.
-
----
-
-## ⭐️ Show Your Support
-
-If you like this project, consider giving it a ⭐️ on GitHub!
+- Add persistent storage
+- Add edit/delete functionality if not already complete
+- Add filtering and sorting
+- Add form validation
+- Deploy live demo

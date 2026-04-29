@@ -6,6 +6,11 @@ A responsive React dashboard for tracking job applications, interview stages, an
 
 HireFlow is a front-end project built to organize the job application process in one place. It focuses on clean UI, reusable React components, and practical dashboard features for tracking applications from saved jobs to offers.
 
+## Live Demo
+
+https://jwwilson1993.github.io/job-tracker-dashboard/
+
+
 ## Built With
 
 - React

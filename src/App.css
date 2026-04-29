@@ -123,8 +123,8 @@
 }
 
 .top-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -150,10 +150,6 @@
   .secondary-action,
   .danger-action {
     width: 100%;
-  }
-
-  .top-section {
-    grid-template-columns: 1fr;
   }
 }
 

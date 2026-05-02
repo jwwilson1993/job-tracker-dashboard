@@ -79,7 +79,6 @@ function App() {
   
 
 const requestDeleteApplication = (application) => {
-  console.log('DELETE REQUEST:', application);
   setApplicationToDelete(application);
 };
 
@@ -205,7 +204,6 @@ const confirmDeleteApplication = () => {
 
       <main className="app-main">
         <DashboardStats applications={applications} />
-        <StatusChart applications={applications} theme={theme} />
 
         <section className="action-bar">
           <button className="secondary-action" onClick={resetDemoData}>
@@ -242,6 +240,8 @@ const confirmDeleteApplication = () => {
           onDeleteApplication={requestDeleteApplication}
           onEditApplication={setEditingApplication}
         />
+
+        <StatusChart applications={applications} theme={theme} />
       </main>
     </div>
   );

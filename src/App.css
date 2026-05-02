@@ -134,6 +134,10 @@
     padding: 1rem;
   }
 
+  .status-chart-section {
+    display: none;
+  }
+
   .header-top {
     flex-direction: column;
     gap: 1rem;

@@ -27,12 +27,37 @@
 
 @media (max-width: 768px) {
   .dashboard-stats {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0.28rem;
+    margin-bottom: 1.5rem;
   }
-}
 
-@media (max-width: 480px) {
-  .dashboard-stats {
-    grid-template-columns: 1fr;
+  .dashboard-stats .stat-card {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.38rem 0.18rem;
+    border-radius: 8px;
+  }
+
+  .dashboard-stats .stat-card h3 {
+    margin-bottom: 0.12rem;
+    font-size: clamp(0.5rem, 1.65vw + 0.28rem, 0.625rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: var(--text-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dashboard-stats .stat-card p {
+    font-size: clamp(1rem, 3.8vw + 0.35rem, 1.15rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-strong);
   }
 }

@@ -226,20 +226,27 @@ const confirmDeleteApplication = () => {
             editingApplication={editingApplication}
             onCancelEdit={() => setEditingApplication(null)}
           />
-
-          <FilterBar
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            statusFilter={statusFilter}
-            setStatusFilter={setStatusFilter}
-          />
         </section>
 
-        <ApplicationList
-          applications={filteredApplications}
-          onDeleteApplication={requestDeleteApplication}
-          onEditApplication={setEditingApplication}
-        />
+        <section className="applications-section" aria-labelledby="applications-heading">
+          <div className="applications-section-toolbar">
+            <h2 id="applications-heading" className="applications-section-title">
+              Applications
+            </h2>
+            <FilterBar
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              statusFilter={statusFilter}
+              setStatusFilter={setStatusFilter}
+            />
+          </div>
+
+          <ApplicationList
+            applications={filteredApplications}
+            onDeleteApplication={requestDeleteApplication}
+            onEditApplication={setEditingApplication}
+          />
+        </section>
 
         <StatusChart applications={applications} theme={theme} />
       </main>

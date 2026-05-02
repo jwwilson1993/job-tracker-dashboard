@@ -23,6 +23,7 @@
 
 .app-main,
 .top-section,
+.applications-section,
 .header-top,
 .action-bar {
   min-width: 0;
@@ -129,6 +130,26 @@
   margin-bottom: 2rem;
 }
 
+.applications-section {
+  margin-bottom: 2rem;
+}
+
+.applications-section-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.applications-section-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-strong);
+  line-height: 1.2;
+}
+
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
@@ -154,6 +175,13 @@
   .secondary-action,
   .danger-action {
     width: 100%;
+  }
+
+  .applications-section-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
   }
 }
 

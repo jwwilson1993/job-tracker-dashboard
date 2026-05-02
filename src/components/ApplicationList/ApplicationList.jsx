@@ -7,9 +7,7 @@ function ApplicationList({
   onEditApplication
 }) {
   return (
-    <section className="application-list-section">
-      <h2>Applications</h2>
-
+    <div className="application-list-section">
       {applications.length === 0 ? (
         <p className="empty-message">
             No applications yet.
@@ -28,7 +26,7 @@ function ApplicationList({
           ))}
         </div>
       )}
-    </section>
+    </div>
   );
 }
 

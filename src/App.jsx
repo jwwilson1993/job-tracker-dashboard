@@ -27,6 +27,7 @@ function App() {
   const [isClearModalOpen, setIsClearModalOpen] = useState(false);
   const [applicationToDelete, setApplicationToDelete] = useState(null);
   const [theme, setTheme] = useState(() => loadTheme());
+  const [isActionsMenuOpen, setIsActionsMenuOpen] = useState(false);
 
   useEffect(() => {
     saveApplications(applications);
@@ -109,10 +110,12 @@ const confirmDeleteApplication = () => {
     setSearchTerm('');
     setStatusFilter('All');
     setApplicationToDelete(null);
+    setIsActionsMenuOpen(false);
     showToast('Demo data restored.');
   };
 
   const openClearModal = () => {
+    setIsActionsMenuOpen(false);
     setIsClearModalOpen(true);
   };
 
@@ -135,6 +138,7 @@ const confirmDeleteApplication = () => {
     }
 
     exportApplicationsToCSV(applications);
+    setIsActionsMenuOpen(false);
     showToast('CSV exported.');
   };
 
@@ -205,20 +209,6 @@ const confirmDeleteApplication = () => {
       <main className="app-main">
         <DashboardStats applications={applications} />
 
-        <section className="action-bar">
-          <button className="secondary-action" onClick={resetDemoData}>
-            Reset Demo Data
-          </button>
-
-          <button className="secondary-action" onClick={handleExportCSV}>
-            Export CSV
-          </button>
-
-          <button className="danger-action" onClick={openClearModal}>
-            Clear All Applications
-          </button>
-        </section>
-
         <section className="top-section">
           <ApplicationForm
             onAddApplication={addApplication}
@@ -233,12 +223,52 @@ const confirmDeleteApplication = () => {
             <h2 id="applications-heading" className="applications-section-title">
               Applications
             </h2>
-            <FilterBar
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              statusFilter={statusFilter}
-              setStatusFilter={setStatusFilter}
-            />
+            <div className="applications-toolbar-actions">
+              <FilterBar
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                statusFilter={statusFilter}
+                setStatusFilter={setStatusFilter}
+              />
+
+              <div className="actions-menu" aria-label="Dashboard actions">
+                <button
+                  className="actions-menu-trigger"
+                  type="button"
+                  aria-label="Open dashboard actions"
+                  aria-haspopup="menu"
+                  aria-expanded={isActionsMenuOpen}
+                  onClick={() => setIsActionsMenuOpen((isOpen) => !isOpen)}
+                >
+                  <span className="actions-menu-dots" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
+                  </span>
+                </button>
+
+                {isActionsMenuOpen && (
+                  <div className="actions-menu-panel" role="menu">
+                    <button type="button" role="menuitem" onClick={resetDemoData}>
+                      Reset Demo Data
+                    </button>
+
+                    <button type="button" role="menuitem" onClick={handleExportCSV}>
+                      Export CSV
+                    </button>
+
+                    <button
+                      type="button"
+                      role="menuitem"
+                      className="actions-menu-danger"
+                      onClick={openClearModal}
+                    >
+                      Clear All Applications
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
           <ApplicationList

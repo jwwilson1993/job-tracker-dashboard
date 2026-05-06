@@ -25,7 +25,7 @@
 .top-section,
 .applications-section,
 .header-top,
-.action-bar {
+.applications-toolbar-actions {
   min-width: 0;
 }
 
@@ -89,38 +89,74 @@
   margin-bottom: 2rem;
 }
 
-.action-bar {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+.actions-menu {
+  position: relative;
+  flex: 0 0 auto;
 }
 
-.secondary-action,
-.danger-action {
-  padding: 0.85rem 1.1rem;
-  border: none;
-  border-radius: 12px;
+.actions-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 700;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  background: var(--panel);
+  color: var(--text);
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.2s ease;
 }
 
-.secondary-action:hover,
-.danger-action:hover {
+.actions-menu-trigger:hover {
   transform: translateY(-1px);
   opacity: 0.96;
 }
 
-.secondary-action {
-  background: var(--panel);
-  color: var(--text);
-  border: 1px solid var(--border);
+.actions-menu-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
 }
 
-.danger-action {
-  background: var(--danger);
-  color: white;
+.actions-menu-dots span {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.actions-menu-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 20;
+  width: min(14rem, calc(100vw - 2rem));
+  padding: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.actions-menu-panel button {
+  width: 100%;
+  padding: 0.72rem 0.8rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+  text-align: left;
+}
+
+.actions-menu-panel button:hover {
+  background: var(--panel-alt);
+}
+
+.actions-menu-panel .actions-menu-danger {
+  color: var(--danger-bright);
 }
 
 .top-section {
@@ -141,6 +177,12 @@
   gap: 0.75rem 1rem;
   flex-wrap: wrap;
   margin-bottom: 0.75rem;
+}
+
+.applications-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .applications-section-title {
@@ -168,13 +210,8 @@
     width: 100%;
   }
 
-  .action-bar {
-    flex-direction: column;
-  }
-
-  .secondary-action,
-  .danger-action {
-    width: 100%;
+  .actions-menu-panel {
+    right: 0;
   }
 
   .applications-section-toolbar {
@@ -182,6 +219,14 @@
     align-items: stretch;
     gap: 0.5rem;
     margin-bottom: 0.625rem;
+  }
+
+  .applications-toolbar-actions {
+    align-items: stretch;
+  }
+
+  .applications-toolbar-actions .actions-menu {
+    align-self: flex-start;
   }
 }
 
